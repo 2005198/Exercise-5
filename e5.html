@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 - Arrays</title>
+    <script>
+        function f5(a, l) {
+            let sum = 0;
+            for (let i = 0; i < l.length; i++) {
+                if (l[i] % a[0] === 0 || l[i] % a[1] === 0) {
+                    sum += l[i];
+                }
+            }
+            return sum;
+        }
+
+        function onClick() {
+            let a = document.getElementById('a').value.split(',').map(Number);
+            let l = document.getElementById('l').value.split(',').map(Number);
+            alert(f5(a, l));
+        }
+    </script>
+</head>
+<body>
+    <label for="a">a (comma-separated list of two numbers): </label><input type="text" id="a"><br>
+    <label for="l">l (comma-separated list of numbers): </label><input type="text" id="l"><br>
+    <button onClick="onClick()">Calculate</button>
+</body>
+</html>
